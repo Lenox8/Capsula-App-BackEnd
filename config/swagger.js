@@ -5,7 +5,7 @@ const options = {
     definition: {
         openapi: "3.0.0",
         info: {
-            title: "API Mern -Cadastro de usuarios",
+            title: "API MERN - CAPSULA DO TEMPO",
             version: "1.0.0",
             description: "Documentacao da API ",
         },

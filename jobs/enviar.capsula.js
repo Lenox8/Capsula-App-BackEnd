@@ -2,6 +2,7 @@ import cron from "node-cron";
 import capsulamodelo from "../models/capsula.modelo.js";
 import sendEmail from "../config/sendemail.js";
 import moment from "moment-timezone";
+
 const enviarCapsula = async (req, res) => {
   cron.schedule("* * * * *", async () => {
     console.log("Verificando capsulas para envio");
@@ -24,7 +25,7 @@ const enviarCapsula = async (req, res) => {
 
         await sendEmail(
           cap.emailDestinatario,
-          "🎉 A sua cápsula do tempo foi entregue!",
+          " A sua cápsula do tempo foi entregue!",
           `
 Olá ${cap.emailDestinatario || "amigo(a)"},
 

@@ -12,7 +12,7 @@ const SECRET = process.env.JWT_SECRET
 
   if(!email  || !password ){
     return res
-              .status(404)
+              .status(400)
               .json({message: "Preencha os campos devidamente"})
   }
      try {
@@ -21,7 +21,7 @@ const SECRET = process.env.JWT_SECRET
       if(!existe){
       return res
             .status(404)
-            .json({errorMessage: "erro no login, usuario nao encontrado"})
+            .json({message: "erro no login, usuario nao encontrado"})
       } else{
         // inicia comparacao de senha pelo bcrypt
           const senhaCorreta = await bcrypt.compare(password, existe.password)

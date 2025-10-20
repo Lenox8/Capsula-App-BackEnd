@@ -5,10 +5,7 @@ import cors from "cors"
 const app = express();
 app.use(express.json()) 
 app.use(bodyParser.json());
-app.use(cors({
-  origin: 'https://capsula-app-front-ned.vercel.app',
-  credentials: true
-}))
+app.use(cors())
 
 
 export default app

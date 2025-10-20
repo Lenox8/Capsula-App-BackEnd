@@ -8,6 +8,7 @@ import editCapsula from "../controller/editar.capsula.js";
 import getAllCapsulas from "../controller/getAllCapsulas.js";
 import apagarCapsula from "../controller/apagar.capsula.js";
 import getUser from "../controller/getUserById.js"
+import capsulapendente from '../controller/capsulasPendentes.js'
 
 const route = express.Router();
 
@@ -22,6 +23,7 @@ route.put("/editarCapsula/:id", verificarToken, editCapsula);
 route.get("/capsulas", verificarToken, getAllCapsulas);
 route.delete("/apagarCapsula/:id", verificarToken, apagarCapsula);
 route.get("/me", verificarToken, getUser)
+route.get("/capsulas/pendentes", verificarToken, capsulapendente)
 // api documentation
 /**
  * @swagger
